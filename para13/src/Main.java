@@ -51,8 +51,11 @@ public class Main {//это все использовать как пример 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите показания счетов");
         int account_number = scanner.nextInt();
-        System.out.println("Введите улицу и дом");
-        String consumer_name = scanner.next();
+        System.out.println("Введите улицу");
+        String ulitsia = scanner.next();
+        System.out.println("Введите дом");
+        String dom = scanner.next();
+        String consumer_name = ulitsia+","+dom;
         int consumer_id = bd.findIntByName("id_consumer", "consumers", "consumer_name", consumer_name);
         if (consumer_id != -1) {
             bd.addAccount(account_number, consumer_id);
@@ -66,8 +69,11 @@ public class Main {//это все использовать как пример 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите сколько надо всего");
         int resource_amount = scanner.nextInt();
-        System.out.println("Введите улицу и дом");
-        String consumer_name = scanner.next();
+        System.out.println("Введите улицу");
+        String ulitsia = scanner.next();
+        System.out.println("Введите дом");
+        String dom = scanner.next();
+        String consumer_name = ulitsia+","+dom;
         int consumer_id = bd.findIntByName("id_consumer", "consumers", "consumer_name", consumer_name);
         if (consumer_id != -1) {
             bd.addResource(resource_amount, consumer_id);
@@ -81,8 +87,11 @@ public class Main {//это все использовать как пример 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите показания");
         int indication_number = scanner.nextInt();
-        System.out.println("Введите улицу и дом");
-        String consumer_name = scanner.next();
+        System.out.println("Введите улицу");
+        String ulitsia = scanner.next();
+        System.out.println("Введите дом");
+        String dom = scanner.next();
+        String consumer_name = ulitsia+","+dom;
         int account_id = bd.findIntByName("id_consumer", "consumers", "consumer_name", consumer_name);
         if (account_id != -1) {
             bd.addIndication(indication_number, account_id);
@@ -94,8 +103,11 @@ public class Main {//это все использовать как пример 
     public static void addConsumer() {
         BD bd = new BD();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите улицу и дом");
-        String consumer_name = scanner.nextLine();
+        System.out.println("Введите улицу");
+        String ulitsia = scanner.next();
+        System.out.println("Введите дом");
+        String dom = scanner.next();
+        String consumer_name = ulitsia+","+dom;
         System.out.println("Введите сколько надо для дома");
         int consumer_need = scanner.nextInt();
         System.out.println("Введите срок, когда энергия перестанет поступать (ХХХХ-ХХ-ХХ)");
@@ -108,8 +120,11 @@ public class Main {//это все использовать как пример 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите название устройства");
         String device_name = scanner.nextLine();
-        System.out.println("Введите улицу и дом");
-        String consumer_name = scanner.next();
+        System.out.println("Введите улицу");
+        String ulitsia = scanner.next();
+        System.out.println("Введите дом");
+        String dom = scanner.next();
+        String consumer_name = ulitsia+","+dom;
         int consumer_id = bd.findIntByName("id_consumer", "consumers", "consumer_name", consumer_name);
         if (consumer_id != -1) {
             bd.addDevice(device_name, consumer_id);
